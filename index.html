@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Finanças (App Simples)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Minhas Finanças</h1>
+    </header>
+
+    <main class="container">
+        <section class="balance-container">
+            <h2>Saldo Atual</h2>
+            <p id="balance" class="balance-value">R$ 0,00</p>
+        </section>
+
+        <section class="summary-container">
+            <div class="summary-card income-card">
+                <h4>Total Receitas</h4>
+                <p id="total-income">R$ 0,00</p>
+            </div>
+            <div class="summary-card expense-card">
+                <h4>Total Despesas</h4>
+                <p id="total-expense">R$ 0,00</p>
+            </div>
+        </section>
+
+        <section class="transaction-form-container">
+            <h3>Nova Transação</h3>
+            <form id="transaction-form">
+                <div class="input-group">
+                    <label for="description">Descrição</label>
+                    <input type="text" id="description" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="amount">Valor (R$)</label>
+                    <input type="number" id="amount" step="0.01" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="type">Tipo</label>
+                    <select id="type" required>
+                        <option value="income">Receita (Entrada)</option>
+                        <option value="expense">Despesa (Saída)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="category">Categoria</label>
+                    <select id="category" required>
+                        <option value="Salario">Salário</option>
+                        <option value="Outras Receitas">Outras Receitas</option>
+                        <option value="Aluguel">Aluguel/Moradia</option>
+                        <option value="Transporte">Transporte (Gasolina, Passagem)</option>
+                        <option value="Alimentacao">Alimentação</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Carro">Carro/Manutenção</option>
+                        <option value="Outras Despesas">Outras Despesas</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Adicionar Transação</button>
+            </form>
+        </section>
+
+        <section class="history-container">
+            <h3>Histórico</h3>
+            <div class="filter-buttons">
+                <button class="btn-filter active" data-filter="all" id="filter-all">Todas</button>
+                <button class="btn-filter" data-filter="income" id="filter-income">Receitas</button>
+                <button class="btn-filter" data-filter="expense" id="filter-expense">Despesas</button>
+            </div>
+            <ul id="transaction-list">
+                </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
